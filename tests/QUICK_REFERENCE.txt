@@ -1,0 +1,105 @@
+╔════════════════════════════════════════════════════════════════╗
+║                 CAMPUS QUEST - TEST COMMANDS                   ║
+║                     QUICK REFERENCE CARD                       ║
+╚════════════════════════════════════════════════════════════════╝
+
+LOCATION: Must run from 'src' folder
+   cd C:\path\to\campus_quest_java\src
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TEST INDIVIDUAL TASKS
+
+   test_task1.bat  →  Student class (energy, knowledge)
+   test_task2.bat  →  Locations (Library, Cafeteria, etc.)
+   test_task3.bat  →  Events (StudyEvent, RandomEncounter)
+   test_task4.bat  →  Character & NPC
+   test_task5.bat  →  Main class
+   test_task6.bat  →  GamePrinter utility
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TEST EVERYTHING
+
+   run_all_tests.bat  →  Runs all 6 tasks sequentially
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+UNDERSTANDING RESULTS
+
+   [PASS] ✓  →  Your code works! Move to next task.
+   
+   [FAIL] ✗  →  Read error message, fix code, try again.
+   
+   [ERROR] ⚠  →  Missing methods. Add them to your class.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+REQUIRED METHODS BY TASK
+
+┌──────────┬────────────────────────────────────────────────────┐
+│ TASK 1   │ Student.java                                       │
+│          │  • increaseEnergy(int amount)                      │
+│          │  • decreaseEnergy(int amount)                      │
+│          │  • increaseKnowledge(int amount)                   │
+│          │  • getKnowledge()                                  │
+│          │  • getEnergy()                                     │
+├──────────┼────────────────────────────────────────────────────┤
+│ TASK 2   │ All Location Classes                               │
+│          │  • interact(Student student)                       │
+├──────────┼────────────────────────────────────────────────────┤
+│ TASK 3   │ All Event Classes                                  │
+│          │  • perform(Student student)                        │
+├──────────┼────────────────────────────────────────────────────┤
+│ TASK 4   │ NPC.java                                           │
+│          │  • speak()                                         │
+├──────────┼────────────────────────────────────────────────────┤
+│ TASK 5   │ Main.java                                          │
+│          │  • main(String[] args)                             │
+├──────────┼────────────────────────────────────────────────────┤
+│ TASK 6   │ GamePrinter.java                                   │
+│          │  • line()                                          │
+│          │  • title(String text)                              │
+└──────────┴────────────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+COMMON ISSUES
+
+   Problem: "cannot find symbol"
+   Fix: Add the missing method to your class
+   
+   Problem: "java is not recognized"
+   Fix: Install JDK or add Java to system PATH
+   
+   Problem: "Could not find junit jar"
+   Fix: Make sure junit-4.12.jar is in tests\junit\
+   
+   Problem: Tests won't run
+   Fix: Make sure you're in the 'src' folder
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WORKFLOW
+
+   1. Write code for a task
+   2. Run: test_taskX.bat
+   3. Read the output
+   4. Fix errors if any
+   5. Run test again
+   6. Repeat until [PASS]
+   7. Move to next task
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MORE HELP
+
+   • Read TESTING_GUIDE.md for detailed instructions
+   • Error messages now explain what's wrong
+   • Each test script shows step-by-step progress
+   • Ask your instructor if you're stuck
+
+╔════════════════════════════════════════════════════════════════╗
+║  TIP: Start with Task 1 and work your way up!                 ║
+║       Don't skip ahead until you see [PASS] for current task. ║
+╚════════════════════════════════════════════════════════════════╝

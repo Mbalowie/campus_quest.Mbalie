@@ -1,0 +1,67 @@
+@echo off
+cls
+echo.
+echo ================================================================
+echo              TASK 6: Testing GamePrinter
+echo ================================================================
+echo.
+
+set JUNIT_JAR=junit\junit-4.12.jar
+set HAMCREST_JAR=junit\hamcrest-core-1.3.jar
+set CLASSPATH=.;%JUNIT_JAR%;%HAMCREST_JAR%
+set BIN_DIR=bin
+
+if not exist %BIN_DIR% mkdir %BIN_DIR%
+
+echo [STEP 1] Compiling GamePrinter...
+echo ----------------------------------------------------------------
+
+javac -d %BIN_DIR% -cp %CLASSPATH% ..\utils\GamePrinter.java 2> errors.txt
+
+if errorlevel 1 (
+    echo.
+    echo [X] ERROR: GamePrinter.java won't compile!
+    echo.
+    type errors.txt
+    echo.
+    del errors.txt
+    pause
+    exit /b 1
+)
+
+echo [OK] GamePrinter compiled!
+echo.
+
+echo [STEP 2] Compiling test...
+echo ----------------------------------------------------------------
+
+javac -d %BIN_DIR% -cp "%CLASSPATH%;%BIN_DIR%" Task6PrinterTests.java 2> errors.txt
+
+if errorlevel 1 (
+    echo.
+    echo [X] ERROR: Test won't compile!
+    echo.
+    echo You're probably missing these methods in GamePrinter.java:
+    echo   public static void line()
+    echo   public static void title(String text)
+    echo.
+    echo Here are the exact errors:
+    type errors.txt
+    echo.
+    del errors.txt
+    pause
+    exit /b 1
+)
+
+echo [OK] Test compiled!
+echo.
+
+echo [STEP 3] Running tests...
+echo ================================================================
+echo.
+
+java -cp "%CLASSPATH%;%BIN_DIR%" org.junit.runner.JUnitCore tests.Task6PrinterTests
+
+echo.
+echo ================================================================
+pause
