@@ -17,7 +17,7 @@ public class LectureHall extends Location {
         
         // Random event: 30% chance of pop quiz
         if (Math.random() < 0.3) {
-            System.out.println("Oh no! The lecturer announces a surprise pop quiz!");
+            System.out.println("Oh no! The Lecturer announces a surprise pop quiz!");
             s.decreaseEnergy(10);
             s.increaseKnowledge(5);
         }
