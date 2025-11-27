@@ -11,6 +11,8 @@ public class Library extends Location {
     @Override
     public void interact(Student s) {
         System.out.println("You quietly read a book");
-        // TODO: decrease energy, increase knowledge
+        // Reading costs some energy but increases knowledge
+        s.decreaseEnergy(10);
+        s.increaseKnowledge(5);
     }
-}
+}   
